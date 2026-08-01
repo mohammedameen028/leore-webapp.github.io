@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>LEORE | Premium Streetwear</title>
+<meta name="description" content="LEORE — structural silhouettes and architectural minimalism for the urban landscape. Premium streetwear, made in small batches." />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..900&family=Hanken+Grotesk:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "inverse-on-surface": "#303030",
+          "secondary-container": "#484a46",
+          "surface-container": "#1f2020",
+          "on-primary-fixed-variant": "#474646",
+          "primary-fixed-dim": "#c9c6c5",
+          "tertiary-container": "#120c00",
+          "on-error": "#690005",
+          "inverse-primary": "#5f5e5e",
+          "on-secondary-container": "#b8b9b4",
+          "on-tertiary-fixed-variant": "#574500",
+          "inverse-surface": "#e4e2e1",
+          "surface-container-lowest": "#0e0e0e",
+          "on-secondary": "#2f312e",
+          "error-container": "#93000a",
+          "tertiary-fixed": "#ffe088",
+          "surface-container-high": "#2a2a2a",
+          "on-tertiary": "#3c2f00",
+          "secondary-fixed": "#e3e3de",
+          tertiary: "#e9c349",
+          "surface-tint": "#c9c6c5",
+          "on-secondary-fixed": "#1a1c19",
+          "surface-dim": "#131313",
+          "on-error-container": "#ffdad6",
+          "on-tertiary-container": "#957700",
+          secondary: "#c6c7c2",
+          "surface-container-highest": "#353535",
+          "outline-variant": "#444748",
+          "surface-variant": "#353535",
+          outline: "#8e9192",
+          "on-secondary-fixed-variant": "#454744",
+          "surface-container-low": "#1b1c1c",
+          "on-background": "#e4e2e1",
+          "on-surface": "#e4e2e1",
+          "surface-bright": "#393939",
+          background: "#131313",
+          "primary-container": "#0d0d0d",
+          "tertiary-fixed-dim": "#e9c349",
+          "on-surface-variant": "#c4c7c7",
+          "primary-fixed": "#e5e2e1",
+          "on-primary-fixed": "#1c1b1b",
+          "on-tertiary-fixed": "#241a00",
+          error: "#ffb4ab",
+          "secondary-fixed-dim": "#c6c7c2",
+          primary: "#c9c6c5",
+          "on-primary": "#313030",
+          surface: "#131313",
+          "on-primary-container": "#7c7a7a"
+        },
+        borderRadius: { DEFAULT: "0rem", lg: "0rem", xl: "0rem", full: "9999px" },
+        spacing: {
+          "margin-desktop": "64px",
+          gutter: "24px",
+          unit: "8px",
+          "section-gap": "120px",
+          "container-max": "1440px",
+          "margin-mobile": "20px"
+        },
+        fontFamily: {
+          button: ["Sora"],
+          "body-md": ["Hanken Grotesk"],
+          "headline-lg": ["Sora"],
+          "display-lg-mobile": ["Sora"],
+          "headline-md": ["Sora"],
+          "display-lg": ["Sora"],
+          "body-lg": ["Hanken Grotesk"],
+          "label-caps": ["JetBrains Mono"]
+        },
+        fontSize: {
+          button: ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+          "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+          "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "display-lg-mobile": ["44px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "800" }],
+          "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+          "display-lg": ["72px", { lineHeight: "76px", letterSpacing: "-0.04em", fontWeight: "800" }],
+          "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }],
+          "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.15em", fontWeight: "500" }]
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+
+<div id="scroll-progress"></div>
+<div id="scrim" class="scrim"></div>
+
+<!-- ============================= NAV ============================= -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto bg-background/90 backdrop-blur-md border-b border-outline-variant/30">
+  <div class="flex items-center gap-12">
+    <a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-background" href="index.html">LEORE</a>
+    <div class="hidden md:flex gap-8">
+      <a class="text-label-caps font-label-caps text-on-background font-bold border-b border-primary" href="shop.html">Collections</a>
+      <a class="text-label-caps font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html#lookbook">Lookbook</a>
+      <a class="text-label-caps font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="shop.html?category=All#archive">Archive</a>
+    </div>
+  </div>
+  <div class="flex items-center gap-6">
+    <button type="button" data-open-search class="flex items-center text-on-background hover:text-primary transition-colors" aria-label="Search products">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    <button type="button" data-open-cart class="flex items-center text-on-background hover:text-primary transition-colors relative" aria-label="Open bag">
+      <span class="material-symbols-outlined">shopping_bag</span>
+      <span data-cart-count class="absolute -top-1 -right-1 text-[10px] bg-tertiary text-on-tertiary rounded-full w-4 h-4 flex items-center justify-center font-bold opacity-0">0</span>
+    </button>
+    <button type="button" data-open-mobile-nav class="md:hidden flex items-center text-on-background" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <!-- ============================= HERO ============================= -->
+  <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-black/40 z-10"></div>
+      <img class="w-full h-full object-cover" alt="Cinematic editorial shot of a model wearing a minimalist black oversized hoodie against brutalist concrete architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEs0DGfnGNSwjopa799_sNQ9K5XBb6oOkjEHMhZ1goIdup5LDd0rjPy9lkSNWr2B7thBRDd8LoK9L1_mla-jllOS7ivsh2w4B4oj53VGmyTI_-nZwTmdrcSptsvPQ3fIp06Wg4vyEcp7XkRvN4MS215MnmiN8v1a2oIGgS7SNsCGpdr0s91sqejyEZkiBjf009K6NA9pvKsWFOS0c8kWQ_Fy5SZQpCdztM54cKYRjtjPigUz572bwh" />
+    </div>
+    <div class="relative z-20 text-center px-4 max-w-4xl">
+      <h1 data-hero-parallax class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background uppercase tracking-tighter mb-8 leading-none">
+        Structural<br />Integrity
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
+        A collection defined by architectural silhouettes and the relentless pursuit of material perfection. Designed for the urban landscape.
+      </p>
+      <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+        <a class="px-12 py-5 bg-on-background text-background font-button text-button uppercase tracking-widest hover:bg-primary transition-colors duration-500 w-full md:w-auto text-center" href="shop.html">Shop the Collection</a>
+        <a class="px-12 py-5 border border-outline text-on-background font-button text-button uppercase tracking-widest hover:bg-white/10 transition-colors duration-500 w-full md:w-auto text-center" href="#lookbook">View Lookbook</a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+      <span class="text-label-caps font-label-caps uppercase tracking-widest opacity-50">Scroll</span>
+      <div class="w-[1px] h-12 bg-outline-variant relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-primary animate-[scroll-hint_2s_ease-in-out_infinite]"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIGNATURE HOODIE FEATURE ===================== -->
+  <section id="lookbook" class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+      <div class="md:col-span-4 reveal-on-scroll mb-12 md:mb-0">
+        <span class="text-label-caps font-label-caps text-tertiary mb-4 block">ESSENTIALS 01</span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 uppercase tracking-tight">The Signature Hoodie</h2>
+        <p class="font-body-md text-on-surface-variant mb-8 leading-relaxed">
+          Engineered from 500GSM heavy-weight organic cotton fleece. Features a structural double-layered hood, dropped shoulders, and a cropped boxy fit. Finished with tonal embroidery on the chest.
+        </p>
+        <div class="flex flex-col gap-4 mb-10">
+          <div class="flex justify-between items-center py-4 border-b border-outline-variant">
+            <span class="text-label-caps font-label-caps uppercase">Composition</span>
+            <span class="text-body-md">100% Organic Cotton</span>
+          </div>
+          <div class="flex justify-between items-center py-4 border-b border-outline-variant">
+            <span class="text-label-caps font-label-caps uppercase">Weight</span>
+            <span class="text-body-md">500 GSM</span>
+          </div>
+          <div class="flex justify-between items-center py-4 border-b border-outline-variant">
+            <span class="text-label-caps font-label-caps uppercase">Price</span>
+            <span class="text-body-md">$245</span>
+          </div>
+        </div>
+        <button type="button" data-quickview="signature-hoodie" class="w-full py-5 bg-on-background text-background font-button text-button uppercase tracking-widest shadow-block hover:translate-x-1 hover:translate-y-1 transition-transform">
+          Explore Product
+        </button>
+      </div>
+      <div class="md:col-span-8 reveal-on-scroll">
+        <div class="aspect-[4/5] md:aspect-[16/10] bg-surface-container-low overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" alt="High-resolution close-up studio shot of a charcoal grey heavy-weight hoodie detail, ribbed cuff and premium fleece texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYdNi_QrZiD4dEnsNMO9yz-Oil4YV-rpXZLUPaMc5dKWiPScj-mOIFpT5LTYwrWpuvayWn8uRvExfHRjHV4c7m4U6tNmalfYRb1t3zIQZY5ZoZrFGX3rp5CjGmxzwLi9UEMm6WsOuQt8o2wdu4rhnq-gPtjji3G6IPWw-SBYcc47LRh0I9FUaonNP8vD8rg_U9Fl1vOQJT44nbzpRqbfBv9Q0x41AIFEpkMMJghVSMmBglbZUWArnu" />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mt-gutter reveal-on-scroll">
+      <div class="md:col-span-7">
+        <div class="aspect-[3/4] bg-surface-container-low overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" alt="Full body studio shot of a model wearing the signature oversized charcoal hoodie and matching sweatpants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtLsJKqd1f-0sIk4EfBxDLgX8jQs7t1z8t5UeDcyiEwIGHexalohGIggoi_rS9cacGgCDdT44N-2DUAQOjpHk_ZjqYy0kNI7rDggVWoOfQ29fgQnlqoa29r5LcXPRSOd1KCkgi60PY3mIAYG--JXvTKk8VXuNG2zfvfZiIFLwxQf6EtLrg6cq4JWhQoFX-jVUc7Ca6rt_91lATpSPWHhkLjMenyxIy0VhFOIIW2qaYt76wHDpP2ox-" />
+        </div>
+      </div>
+      <div class="md:col-span-5 flex flex-col justify-end">
+        <div class="aspect-square bg-surface-container-low overflow-hidden mb-gutter group">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" alt="Extreme close-up of a tonal embroidered brand logo on the chest of a black hoodie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYJ5teJmTeFpH9SWjJfo3TNinZI5a9CXQBkRqH3rBETiY7RkvBnDolzRlBoBtV-SD0yTENqlRCHGVz8jWOGAhSOTishLQH0qXE1LUFARhr3Myw_fSxF5ODFrBPgQQNj6FWvs2oiiLIAOYFfwzXy5wrjyc6npngc-Wv8d91SmTQ7nYtsmjFf3BrELPqf07cIkTKFjjq2zhEq8jJm2vxp8bxgDD9VeurG1MphSZR-Yq_Qh6N2CCGOtwo" />
+        </div>
+        <div class="p-8 border border-outline-variant">
+          <h3 class="font-headline-md text-headline-md mb-2">Uncompromising Fit</h3>
+          <p class="text-on-surface-variant font-body-md">Designed to hold its shape through years of wear. The architectural approach to pattern making ensures a silhouette that stands apart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BENTO COLLECTIONS ===================== -->
+  <section class="py-section-gap bg-surface-container-lowest">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="flex justify-between items-end mb-16 reveal-on-scroll">
+        <div>
+          <span class="text-label-caps font-label-caps text-tertiary mb-2 block uppercase">Current Rotation</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Collections</h2>
+        </div>
+        <a class="text-label-caps font-label-caps uppercase border-b border-on-surface pb-1 hover:text-primary hover:border-primary transition-all hidden md:block" href="shop.html">View All</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[800px] reveal-on-scroll">
+        <a href="shop.html?category=Outerwear" class="md:col-span-2 md:row-span-2 relative group overflow-hidden border border-outline-variant/30 h-[400px] md:h-auto block">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+          <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="Wide-angle moody shot of an urban landscape at twilight with a model in a long tech-fabric trench coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKqM-xVl99iOSXdUESBspfPCX7zG4Wii-IaSEooYfbPh66RbWYRBTfL34zr79hIT-vUbyfbgAFNSHZp10qt7ylQnqm8oNZMFHaH9KKpqEwNX45xtqL-L4j_ka1jkW_ZYWBceDbbnf-l5c0n4lCf0D3Qvmcf_X24OpCGJ7lHdYyxx61le3i7ctCxFsV3H69pZTjczQYrkuUKX0QIGfZ2io5Jhjk4YuulhMdrmBso67UX_2MBR5H_405" />
+          <div class="absolute bottom-10 left-10 z-20">
+            <h3 class="text-headline-lg font-headline-lg text-on-background mb-4 uppercase">Outerwear<br />Series 02</h3>
+            <span class="px-6 py-3 border border-on-background text-on-background font-button text-button uppercase tracking-widest inline-block group-hover:bg-on-background group-hover:text-background transition-all">Shop Now</span>
+          </div>
+        </a>
+        <a href="shop.html?category=Accessories" class="md:col-span-2 relative group overflow-hidden border border-outline-variant/30 h-[400px] md:h-auto block">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+          <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="Studio shot of a curated selection of premium leather accessories including a wallet and crossbody bag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5wAfta_ZGCe5NG2i2S8Sk8KhR_uEoAp9pF2hzyyT6yNubHYZC58ICETDUm_FOAC78aCaet43nePTVQxjGe45rYPOuJH39kQxxs_6Jo43oSWkUKUIEk74MCxWrzjFavFRK02fRJ1JukIn_Dmn0efvgIUcbpcm67gUKbmOYbAN3g_5Lh5L6egrIaJfiJY0MOs510r5yj1q298g7LluGGLdEvQVdvyRlUmIXZFEa-gUnINQnTmNbTMj8" />
+          <div class="absolute bottom-8 left-8 z-20">
+            <h3 class="text-headline-md font-headline-md text-on-background mb-2 uppercase">Accessories</h3>
+            <span class="text-label-caps font-label-caps text-on-surface-variant uppercase">Limited Release</span>
+          </div>
+        </a>
+        <a href="shop.html?category=Pants" class="relative group overflow-hidden border border-outline-variant/30 h-[376px] md:h-auto block">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+          <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="Monochromatic detail shot of structured heavy-duty cargo pants in matte technical nylon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa4jLPzIWhRGI_Uj4CqFRl72_HAK4CnbXsPg1JUcD_XQNLWfyl1Tk9XU6Ztl6X2e6f5GZpu6gtgeFQSwRT0Drh9fCh73lOKf9_KkzL_EkF2KPXLAtNrgmybHAJWLgOY4ee6eiSXDhGkIB-P6Fj4mNXdxeMUxVFMPwzVxcwWMfNDkgGrqB8aeWYXeHauh8-bukkBBRXzvSDlSeUIfoGab2oy6k9GGWUw4H7YkhNpp6JY2RQDoGcJ8-l" />
+          <div class="absolute bottom-6 left-6 z-20">
+            <h3 class="text-label-caps font-label-caps font-bold text-on-background uppercase">Pants</h3>
+          </div>
+        </a>
+        <a href="shop.html?category=Knitwear" class="relative group overflow-hidden border border-outline-variant/30 h-[376px] md:h-auto block">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+          <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="Portrait of a model wearing a heavy-knit beanie and mock-neck sweater in soft cream tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQZ2yDRGuJUZW6nhQgrObDr8hqIAjaDl7aOhOdWCxBoEhkqoCEbmOBm2QRhDulY0BNzgum3wKiyrjPPGXmoPlZ5tHHDk7etPNhoN8-p83ul_QjE2vm4sSTzWS1_qE41Oj_zq26o65aYNVA_LY69IqpDmp_coEvm6pRBPDj-GcroykkBJyZj3tVLzOczhsD_AgpU31H9JLSOlozQfr_h3csJzGLdab3gWqr8-R60aK-BiBPDvq6ueZp" />
+          <div class="absolute bottom-6 left-6 z-20">
+            <h3 class="text-label-caps font-label-caps font-bold text-on-background uppercase">Knitwear</h3>
+          </div>
+        </a>
+      </div>
+      <a href="shop.html" class="text-label-caps font-label-caps uppercase border-b border-on-surface pb-1 hover:text-primary hover:border-primary transition-all md:hidden mt-10 inline-block">View All</a>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section class="py-section-gap border-t border-outline-variant/30">
+    <div class="max-w-3xl mx-auto text-center px-margin-mobile reveal-on-scroll">
+      <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-6 tracking-tighter">Join the Collective</h2>
+      <p class="font-body-md text-on-surface-variant mb-10">Subscribe to receive exclusive early access to limited archival releases and seasonal lookbooks.</p>
+      <form class="flex flex-col md:flex-row gap-0 group" data-newsletter-form>
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <input id="newsletter-email" class="flex-grow bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 text-on-background font-label-caps py-4 px-0 outline-none transition-all placeholder:text-outline-variant/50" placeholder="ENTER YOUR EMAIL" type="email" required />
+        <button class="md:ml-8 mt-6 md:mt-0 font-button text-button uppercase tracking-widest border-b border-on-surface pb-1 hover:text-primary hover:border-primary transition-all" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop mt-section-gap border-t border-outline-variant bg-surface-container-lowest text-on-surface">
+  <div class="max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+      <div class="md:col-span-1">
+        <span class="text-headline-lg font-headline-lg font-black tracking-tighter text-on-surface block mb-6">LEORE</span>
+        <p class="text-body-md text-on-surface-variant max-w-xs">Elevating urban essentials through structural design and premium craftsmanship since 2024.</p>
+      </div>
+      <div>
+        <h4 class="text-label-caps font-label-caps mb-6 uppercase tracking-widest text-on-surface">Shop</h4>
+        <ul class="space-y-4 text-on-surface-variant font-body-md">
+          <li><a class="hover:text-tertiary transition-colors" href="shop.html">New Arrivals</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="shop.html?category=Hoodies">Hoodies</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="shop.html?category=Accessories">Accessories</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="shop.html">Archive</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-label-caps font-label-caps mb-6 uppercase tracking-widest text-on-surface">Support</h4>
+        <ul class="space-y-4 text-on-surface-variant font-body-md">
+          <li><a class="hover:text-tertiary transition-colors" href="#">Shipping</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="#">Returns</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="#">Contact</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-label-caps font-label-caps mb-6 uppercase tracking-widest text-on-surface">Legal</h4>
+        <ul class="space-y-4 text-on-surface-variant font-body-md">
+          <li><a class="hover:text-tertiary transition-colors" href="#">Privacy</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="#">Terms</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="#">Instagram</a></li>
+          <li><a class="hover:text-tertiary transition-colors" href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+      <span class="text-label-caps font-label-caps text-on-surface-variant">© 2024 LEORE. ALL RIGHTS RESERVED.</span>
+      <div class="flex gap-8">
+        <span class="text-label-caps font-label-caps text-on-surface-variant">EST. 2024</span>
+        <span class="text-label-caps font-label-caps text-on-surface-variant">LONDON / NEW YORK</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= MOBILE NAV DRAWER ============================= -->
+<div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <div class="flex justify-between items-center h-20 px-margin-mobile border-b border-outline-variant/30">
+    <span class="text-headline-md font-headline-md font-bold tracking-tighter text-on-background">LEORE</span>
+    <button type="button" data-close-mobile-nav aria-label="Close menu" class="text-on-background">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <nav class="flex flex-col gap-2 px-margin-mobile py-10">
+    <a href="shop.html" class="py-4 border-b border-outline-variant/30 text-headline-md font-headline-md uppercase text-on-background">Collections</a>
+    <a href="index.html#lookbook" data-close-mobile-nav class="py-4 border-b border-outline-variant/30 text-headline-md font-headline-md uppercase text-on-background">Lookbook</a>
+    <a href="shop.html" class="py-4 border-b border-outline-variant/30 text-headline-md font-headline-md uppercase text-on-background">Archive</a>
+  </nav>
+</div>
+
+<!-- ============================= SEARCH OVERLAY ============================= -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="max-w-3xl mx-auto px-margin-mobile pt-24 md:pt-32">
+    <div class="flex justify-between items-center mb-10">
+      <span class="text-label-caps font-label-caps text-on-surface-variant uppercase">Search</span>
+      <button type="button" data-close-search aria-label="Close search" class="text-on-background">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="flex items-center border-b border-outline-variant pb-4 mb-8">
+      <span class="material-symbols-outlined text-on-surface-variant mr-4">search</span>
+      <input id="search-input" type="text" placeholder="SEARCH PRODUCTS, CATEGORIES..." class="text-headline-md font-headline-md uppercase" />
+    </div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- ============================= CART DRAWER ============================= -->
+<div id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping bag">
+  <div class="flex justify-between items-center h-20 px-8 border-b border-outline-variant/30 flex-shrink-0">
+    <span class="text-label-caps font-label-caps uppercase text-on-background">Your Bag</span>
+    <button type="button" data-close-cart aria-label="Close bag" class="text-on-background">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="flex-grow overflow-y-auto px-8">
+    <p id="cart-empty" class="text-on-surface-variant font-body-md py-12">Your bag is empty. <a href="shop.html" class="underline hover:text-tertiary">Browse collections →</a></p>
+    <div id="cart-lines"></div>
+  </div>
+  <div class="px-8 py-8 border-t border-outline-variant/30 flex-shrink-0">
+    <div class="flex justify-between items-center mb-6">
+      <span class="text-label-caps font-label-caps uppercase text-on-surface-variant">Subtotal</span>
+      <span id="cart-subtotal" class="text-headline-md font-headline-md text-on-background">$0</span>
+    </div>
+    <button type="button" id="checkout-btn" class="w-full py-5 bg-on-background text-background font-button text-button uppercase tracking-widest shadow-block hover:translate-x-1 hover:translate-y-1 transition-transform">
+      Checkout
+    </button>
+    <p class="text-label-caps font-label-caps text-on-surface-variant/60 mt-4 text-center">Demo store — no payment is processed</p>
+  </div>
+</div>
+
+<!-- ============================= QUICK VIEW MODAL ============================= -->
+<div id="quickview-modal" role="dialog" aria-modal="true" aria-label="Product quick view">
+  <div data-close-quickview-scrim class="absolute inset-0"></div>
+  <div id="quickview-panel" class="relative"></div>
+</div>
+
+<!-- ============================= TOASTS ============================= -->
+<div id="toast-stack" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("checkout-btn")?.addEventListener("click", () => {
+    if (document.getElementById("cart-lines").children.length === 0) return;
+    const stack = document.getElementById("toast-stack");
+    const t = document.createElement("div");
+    t.className = "toast";
+    t.textContent = "Demo checkout — no payment processed";
+    stack.appendChild(t);
+    requestAnimationFrame(() => t.classList.add("show"));
+    setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.remove(), 300); }, 2600);
+  });
+</script>
+</body>
+</html>

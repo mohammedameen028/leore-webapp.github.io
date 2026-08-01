@@ -1,0 +1,410 @@
+/* ==========================================================================
+   LEORE — Custom Styles
+   Tailwind (via CDN, configured inline in each page) handles layout &
+   utility classes straight from DESIGN.md tokens. This file only covers
+   things Tailwind utilities can't: the cart drawer, quick-view modal,
+   toasts, scroll progress bar, and a few brand-specific micro-interactions.
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #131313;
+  color: #e4e2e1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Visible keyboard focus everywhere — sharp, on-brand, no soft glow */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #e9c349;
+  outline-offset: 2px;
+}
+
+/* ---- Block shadow + hover-lift (from DESIGN.md elevation spec) ---- */
+.shadow-block {
+  box-shadow: 4px 4px 0px 0px #262626;
+}
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ---- Scroll reveal ---- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.2, 0, 0, 1);
+}
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Custom scrollbar ---- */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9c6c5;
+}
+
+/* ---- Scroll progress bar (Muted Gold, per DESIGN.md "Interactive Progress") ---- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: #e9c349;
+  z-index: 70;
+  transition: width 0.1s linear;
+}
+
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* ==========================================================================
+   Overlay scrim shared by cart drawer / quick-view / search / mobile nav
+   ========================================================================== */
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+.scrim.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   Cart drawer
+   ========================================================================== */
+#cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 440px;
+  background: #131313;
+  border-left: 1px solid #444748;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+#cart-drawer.open {
+  transform: translateX(0);
+}
+
+.cart-line {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #262626;
+}
+.cart-line img {
+  width: 88px;
+  height: 104px;
+  object-fit: cover;
+  background: #1b1c1c;
+}
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #444748;
+}
+.qty-stepper button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e4e2e1;
+  transition: background 0.2s ease;
+}
+.qty-stepper button:hover {
+  background: #2a2a2a;
+}
+.qty-stepper span {
+  min-width: 28px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   Quick-view modal
+   ========================================================================== */
+#quickview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 71;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#quickview-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+#quickview-panel {
+  background: #1b1c1c;
+  border: 1px solid #444748;
+  box-shadow: 4px 4px 0px 0px #262626;
+  max-width: 920px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  transform: translateY(16px);
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#quickview-modal.open #quickview-panel {
+  transform: translateY(0);
+}
+
+.size-swatch {
+  border: 1px solid #444748;
+  padding: 10px 4px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #c4c7c7;
+  background: transparent;
+}
+.size-swatch:hover {
+  border-color: #c9c6c5;
+  color: #e4e2e1;
+}
+.size-swatch.selected {
+  background: #e4e2e1;
+  border-color: #e4e2e1;
+  color: #131313;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Search overlay
+   ========================================================================== */
+#search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 71;
+  background: #131313;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#search-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+#search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e4e2e1;
+  width: 100%;
+}
+#search-input::placeholder {
+  color: #444748;
+}
+.search-result-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #262626;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.search-result-row:hover {
+  opacity: 0.7;
+}
+.search-result-row img {
+  width: 56px;
+  height: 68px;
+  object-fit: cover;
+  background: #1b1c1c;
+}
+
+/* ==========================================================================
+   Mobile nav drawer
+   ========================================================================== */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 84%;
+  max-width: 360px;
+  background: #0e0e0e;
+  border-left: 1px solid #444748;
+  z-index: 70;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+}
+#mobile-nav.open {
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   Toasts
+   ========================================================================== */
+#toast-stack {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  padding: 0 16px;
+}
+.toast {
+  background: #e4e2e1;
+  color: #131313;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 18px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 4px 4px 0px 0px #262626;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Product cards (shop grid)
+   ========================================================================== */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.product-card .media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: #1b1c1c;
+  overflow: hidden;
+}
+.product-card .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2, 0, 0, 1);
+}
+.product-card:hover .media img {
+  transform: scale(1.06);
+}
+.product-card .quick-add {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+.product-card:hover .quick-add {
+  transform: translateY(0);
+}
+
+.filter-tab {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid transparent;
+  color: #c4c7c7;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.filter-tab:hover {
+  color: #e4e2e1;
+}
+.filter-tab.active {
+  color: #e4e2e1;
+  border-bottom-color: #e9c349;
+}
+
+/* Simple fade-up for newsletter success state */
+.fade-in {
+  animation: fade-in 0.5s ease forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
