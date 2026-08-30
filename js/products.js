@@ -13,7 +13,7 @@ const PRODUCTS = [
     category: "Hoodies",
     price: 245,
     tag: "Essentials 01",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtLsJKqd1f-0sIk4EfBxDLgX8jQs7t1z8t5UeDcyiEwIGHexalohGIggoi_rS9cacGgCDdT44N-2DUAQOjpHk_ZjqYy0kNI7rDggVWoOfQ29fgQnlqoa29r5LcXPRSOd1KCkgi60PY3mIAYG--JXvTKk8VXuNG2zfvfZiIFLwxQf6EtLrg6cq4JWhQoFX-jVUc7Ca6rt_91lATpSPWHhkLjMenyxIy0VhFOIIW2qaYt76wHDpP2ox-",
+    img: "assets/products/7AF39B55-8E20-4F27-BCC8-F6EC50A4FACB.png",
     imgAlt: "Model wearing the oversized charcoal signature hoodie and matching sweatpants",
     detail: "Engineered from 500GSM heavy-weight organic cotton fleece. Structural double-layered hood, dropped shoulders, cropped boxy fit. Tonal embroidery on the chest.",
     sizes: ["XS", "S", "M", "L", "XL"],
