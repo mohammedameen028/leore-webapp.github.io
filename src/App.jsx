@@ -4,8 +4,15 @@ import catalog from "./data/products.json";
 const money = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
 const PRODUCTS = catalog.products.map(({ image, imageAlt, details, ...product }) => ({ ...product, img: image, imgAlt: imageAlt, detail: details }));
 const getProduct = (id) => PRODUCTS.find((product) => product.id === id);
-const resolveAsset = (assetPath) => new URL(`../${assetPath}`, import.meta.url).href;
-const imageFor = (id) => resolveAsset(getProduct(id).img);
+const resolveAsset = (assetPath) => {
+  if (!assetPath) return "";
+  const normalizedPath = String(assetPath).replace(/^\.?\/?/, "").replace(/^\/+/, "");
+  return `/${normalizedPath}`;
+};
+const imageFor = (id) => {
+  const product = getProduct(id);
+  return product ? resolveAsset(product.img) : "";
+};
 const categories = ["All", "Hoodies"];
 const featuredProduct = PRODUCTS.find((product) => product.id === "signature-hoodie");
 
