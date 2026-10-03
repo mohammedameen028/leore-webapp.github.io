@@ -1,0 +1,101 @@
+{
+  "heroImage": "assets/products/hero-editorial.png",
+  "products": [
+    {
+      "id": "signature-hoodie",
+      "name": "The Signature Hoodie",
+      "category": "Hoodies",
+      "price": 2499,
+      "tag": "Essentials 01",
+      "image": "assets/products/signature-hoodie.jpg",
+      "imageAlt": "Model wearing the oversized charcoal signature hoodie and matching sweatpants",
+      "details": "Engineered from 500GSM heavy-weight organic cotton fleece. Structural double-layered hood, dropped shoulders, cropped boxy fit. Tonal embroidery on the chest.",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "inStock": true
+    },
+    {
+      "id": "concrete-jacket",
+      "name": "Editorial Concrete Jacket",
+      "category": "Outerwear",
+      "price": 5200,
+      "tag": "Series 02",
+      "image": "assets/products/concrete-jacket.jpg",
+      "imageAlt": "Model in a minimalist oversized coat against brutalist concrete architecture",
+      "details": "A structural silhouette built for the urban landscape. Weatherproof shell, articulated seams, hidden interior pocket system.",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "inStock": true
+    },
+    {
+      "id": "trench-coat",
+      "name": "Structural Trench",
+      "category": "Outerwear",
+      "price": 3999,
+      "tag": "Limited",
+      "image": "assets/products/trench-coat.jpg",
+      "imageAlt": "Model walking away from camera wearing a long tech-fabric trench coat",
+      "details": "Tech-fabric trench with a cold, architectural drape. Cyberpunk-minimalist silhouette for low-light city wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "inStock": true
+    },
+    {
+      "id": "cargo-pants",
+      "name": "Tonal Cargo Pants",
+      "category": "Pants",
+      "price": 210,
+      "tag": "Restocked",
+      "image": "assets/products/cargo-pants.jpg",
+      "imageAlt": "Detail shot of structured heavy-duty cargo pants in matte technical nylon",
+      "details": "Structured heavy-duty cargo silhouette in matte technical nylon. Oversized pockets, articulated knee, drawcord hem.",
+      "sizes": ["28", "30", "32", "34", "36"],
+      "inStock": true
+    },
+    {
+      "id": "mockneck-knit",
+      "name": "Heavyweight Mock-Neck Knit",
+      "category": "Knitwear",
+      "price": 1999,
+      "tag": "New",
+      "image": "assets/products/mockneck-knit.jpg",
+      "imageAlt": "Model wearing a heavy-knit beanie and mock-neck sweater in cream tones",
+      "details": "Heavy-gauge wool blend mock-neck. Soft-hand finish, ribbed cuffs and hem, calm and sophisticated palette.",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "inStock": true
+    },
+    {
+      "id": "crossbody-set",
+      "name": "Leather Crossbody Set",
+      "category": "Accessories",
+      "price": 1399,
+      "tag": "Limited Release",
+      "image": "assets/products/crossbody-set.jpg",
+      "imageAlt": "Curated selection of premium leather accessories including a wallet and crossbody bag",
+      "details": "Minimalist wallet and crossbody bag, presented like museum artifacts. Full-grain leather, brushed hardware.",
+      "sizes": ["One Size"],
+      "inStock": true
+    },
+    {
+      "id": "crest-hoodie",
+      "name": "Embroidered Crest Hoodie",
+      "category": "Hoodies",
+      "price": 1699,
+      "tag": "Archive",
+      "image": "assets/products/crest-hoodie.jpg",
+      "imageAlt": "Extreme close-up of a tonal embroidered brand crest on the chest of a black hoodie",
+      "details": "Subtle tonal embroidery for textural contrast over color. Heavy-knit base fabric, boxy cropped fit.",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "inStock": false
+    },
+    {
+      "id": "boxy-pullover",
+      "name": "Boxy Fleece Pullover",
+      "category": "Hoodies",
+      "price": 1699,
+      "tag": "Essentials",
+      "image": "assets/products/boxy-pullover.jpg",
+      "imageAlt": "Close-up studio shot of a charcoal grey heavy-weight hoodie's ribbed cuff detail",
+      "details": "500GSM fleece cuff and hem detail. Same signature construction, undecorated for a cleaner drop.",
+      "sizes": ["S", "M", "L", "XL"],
+      "inStock": true
+    }
+  ]
+}

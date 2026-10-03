@@ -1,43 +1,44 @@
 # LEORE — Interactive Website
 
-Built from your Stitch design (`DESIGN.md` tokens + `code.html` mockup). No
-build step, no dependencies to install — it's plain HTML/CSS/JS, so you can
-open it locally or drop it straight onto any static host.
+Built from your Stitch design (`DESIGN.md` tokens + `code.html` mockup). The
+storefront now runs as a React app powered by Vite while keeping the existing
+assets and visual system.
 
 ## What's inside
 
 ```
 leore/
-├── index.html      Home landing page (hero, signature product, collections, newsletter)
-├── shop.html        Full collections page — filterable, sortable product grid
+├── index.html        Vite entry point for the React app
+├── src/App.jsx       React storefront, shared overlays, cart and page views
+├── src/data/products.json Product catalog and image configuration
 ├── css/style.css     Custom styles layered on top of Tailwind (drawer, modal, toasts…)
-├── js/products.js    Product catalog — one place to edit names, prices, images, sizes
-└── js/main.js        All interactivity (cart, quick view, search, nav, filters)
+└── package.json      Vite scripts and React dependencies
 ```
 
 ## Running it
 
-No server required — just open `index.html` in a browser. If your browser
-blocks local scripts from loading, run a tiny local server instead:
+Install dependencies and start the Vite development server:
 
 ```
-cd leore
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:8000`.
+Then visit the URL printed by Vite, usually `http://localhost:5173`.
+
+Create a production build with `npm run build`. The generated `dist/` folder
+can be deployed to GitHub Pages or another static host.
 
 ## What's interactive
 
 - **Shopping bag** — add to bag from the hero product or any product card,
-  adjust quantity, remove items. Persists across `index.html` ↔ `shop.html`
+  adjust quantity, remove items. Persists across the home and collections views
   via `localStorage`, with a live count badge in the nav.
 - **Quick View modal** — opens for any product, size selection required
   before adding to bag.
-- **Shop page filtering & sorting** — category tabs (Hoodies, Outerwear,
-  Pants, Knitwear, Accessories) and a price sort, both live-rendered from
-  `products.js`. Bento tiles on the home page deep-link into pre-filtered
-  views (e.g. `shop.html?category=Outerwear`).
+- **Collections filtering & sorting** — category tabs (All and Hoodies) and a
+  price sort, both live-rendered from `products.json`. Bento tiles on the home page deep-link into pre-filtered
+  views (e.g. `/?page=shop&category=Outerwear`).
 - **Live search** — full-screen overlay, filters the catalog as you type,
   click a result to jump straight into its quick view.
 - **Mobile nav drawer**, **scroll-triggered reveals**, a **scroll progress
@@ -48,18 +49,14 @@ Then visit `http://localhost:8000`.
 
 ## Editing products
 
-Everything in the shop — home page bento links, the shop grid, quick view,
-and search — reads from a single array in `js/products.js`. Add, remove, or
+Everything in the shop — home page imagery, the shop grid, quick view, and
+search — reads from `src/data/products.json`. Add, remove, or
 edit a product there and it updates everywhere automatically.
 
-## One thing worth knowing
-
-The product photography currently hotlinks the placeholder images Stitch
-generated (`lh3.googleusercontent.com` URLs). They're working now, but
-they're not guaranteed to stay available long-term since they're not files
-you own. Swap them for your own photography by changing the `img` field in
-`js/products.js` and the equivalent `<img>` tags in `index.html` — no other
-code needs to change.
+Product images live together in `assets/products/` and use the matching product
+slug, such as `assets/products/signature-hoodie.jpg`. Change the `image` field
+in the JSON when replacing product photography; homepage product images use the
+same catalog automatically.
 
 ## Design system reference
 
