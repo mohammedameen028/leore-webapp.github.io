@@ -96,6 +96,18 @@
       "details": "500GSM fleece cuff and hem detail. Same signature construction, undecorated for a cleaner drop.",
       "sizes": ["S", "M", "L", "XL"],
       "inStock": true
+    },
+    {
+      "id": "hoodie-teal",
+      "name": "Teal Hoodie",
+      "category": "Hoodies",
+      "price": 1699,
+      "tag": "Essentials",
+      "image": "assets/products/teal-hoodie.png",
+      "imageAlt": "Close-up studio shot of a teal heavy-weight hoodie's ribbed cuff detail",
+      "details": "500GSM fleece cuff and hem detail. Same signature construction, undecorated for a cleaner drop.",
+      "sizes": ["S", "M", "L", "XL"],
+      "inStock": true
     }
   ]
 }
